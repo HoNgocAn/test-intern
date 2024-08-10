@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 
 function App() {
+
   const [title, setTitle] = useState(<h3>LET'S PLAY</h3>);
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
@@ -64,7 +65,6 @@ function App() {
         setTitle(<h3 style={{ color: "green" }}>ALL CLEARED</h3>);
       }
     } else {
-
       setIsRunning(false);
       setTitle(<h3 style={{ color: "red" }}>GAME-OVER</h3>);
     }
@@ -94,7 +94,7 @@ function App() {
               <td colSpan="2">
                 <button
                   type="button"
-                  onClick={handleRestart}
+                  onClick={() => handleRestart()}
                 >
                   {titleButton ? "Play" : "Restart"}
                 </button>
